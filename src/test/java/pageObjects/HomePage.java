@@ -28,6 +28,11 @@ public class HomePage {
     @FindBy(css = ".oxd-topbar-header-userarea")
     WebElement userprofile;
 
+    @FindBy(xpath ="(//span[contains(normalize-space(),'Recruitment')])[1]")
+    WebElement recruitment;
+
+
+
 
     public boolean isDashboardDisplayed() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -38,5 +43,9 @@ public class HomePage {
     public void clickLogout() {
         userprofile.click();
         lnkLogout.click();
+    }
+
+    public void clickRecruitment() {
+        recruitment.click();
     }
 }

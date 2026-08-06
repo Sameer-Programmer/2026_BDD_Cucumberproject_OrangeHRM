@@ -3,12 +3,23 @@ Step 1
 Create the Folders
 1)Features
 2)Drivers
-3)D:\NaveenDemoProject\2026_NopEcommerce_BDD_Cucumberproject\src\test\java\pageObjects
-4)D:\NaveenDemoProject\2026_NopEcommerce_BDD_Cucumberproject\src\test\java\StepDefinations
-5)D:\NaveenDemoProject\2026_NopEcommerce_BDD_Cucumberproject\src\test\java\utilities
+3) \src\test\java\pageObjects
+4) \src\test\java\StepDefinations
+5) \src\test\java\utilities
+6) \src\test\java\testRunner
+
 
 Step 2
-D:\NaveenDemoProject\2026_NopEcommerce_BDD_Cucumberproject\Features\Login.feature
+ \Features\Login.feature
 
 Step3
-D:\NaveenDemoProject\2026_NopEcommerce_BDD_Cucumberproject\Features\Login.feature
+ src/test/java/pageObjects/LoginPage.java
+ src/test/java/pageObjects/HomePage.java
+
+ stpe4
+ StepDefination file as per the Feature File Steps
+
+ Step5 -To Run the test cases
+ src/test/java/testRunner/TestCaserun.java
+
+ //p[contains(normalize-space(),'Successfully Saved')]

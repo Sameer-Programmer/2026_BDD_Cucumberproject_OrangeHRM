@@ -4,16 +4,15 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import pageObjects.CandidatePage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
 import javax.sql.rowset.WebRowSet;
 import java.time.Duration;
 
-public class Steps1 {
-    public WebDriver driver;
-    public LoginPage loginPage;
-    public HomePage homePage;
+public class Steps1 extends Baseclass{
+
 
     @Given("Launch the Chrome Browser")
     public void launch_the_chrome_browser() {
@@ -36,7 +35,6 @@ public class Steps1 {
         loginPage.setPassword(password);
         loginPage.clickLogin();
         homePage = new HomePage(driver);
-
     }
 
 
@@ -63,5 +61,42 @@ public class Steps1 {
     public void close_the_browser() {
         driver.quit();
     }
+    // Additinal
+
+    @When("User Clicks on Recruitment Menu")
+    public void user_clicks_on_recruitment_menu() {
+        homePage.clickRecruitment();
+        candidatePage = new CandidatePage(driver);
+    }
+    @When("User Clicks on Add Button")
+    public void user_clicks_on_add_button() {
+        candidatePage.clickAddButton();
+    }
+    @When("User enter the Candidate Details")
+    public void user_enter_the_candidate_details() {
+        candidatePage.enterFirstName("Sameer");
+        candidatePage.enterMiddleName("Mohammed");
+        candidatePage.enterLastName("Shaik");
+        candidatePage.clickVacancyDropdown();
+        candidatePage.selectSeniorQALead();
+        String email = randomString()+"@yopmail.com";
+        candidatePage.enterEmail(email);
+        candidatePage.enterContactNumber("9999999999");
+    }
+    @When("Click on Save button")
+    public void click_on_save_button() {
+        candidatePage.clickSaveButton();
+    }
+    @Then("user can view the confirmation message {string}")
+    public void user_can_view_the_confirmation_message(String expectedText) {
+        Assert.assertTrue(candidatePage.isSuccessMessageDisplayed(), "Success is not displayed");
+        Assert.assertEquals(candidatePage.getSuccessMessage(), expectedText,
+                "Success message is incorrect");
+
+    }
+
+
+
+
 
 }
