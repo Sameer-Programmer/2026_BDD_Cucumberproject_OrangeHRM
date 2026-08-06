@@ -1,0 +1,46 @@
+https://github.com/pavanoltraining/nopcommercecucumber/blob/master/pom.xml
+
+Create the Maven project and add these dependencies
+==========================
+BDD Framework Dependencies
+==========================
+
+1. Maven Compiler Plugin
+   - Compiles Java code
+   - Java Version: 1.8
+
+2. Cucumber Core
+   - Main Cucumber execution engine
+
+3. Cucumber Java
+   - Provides @Given, @When, @Then, @And annotations
+
+4. Cucumber JUnit
+   - Executes Cucumber feature files using JUnit
+
+5. Gherkin
+   - Parses .feature files (Feature, Scenario, Given, When, Then)
+
+6. Selenium Java
+   - Browser automation
+
+7. Cucumber HTML
+   - Generates HTML execution reports
+
+8. Cucumber Reporting (Masterthought)
+   - Advanced Cucumber reports with charts and statistics
+
+9. Hamcrest Core
+   - Assertion matchers
+
+10. Log4j
+    - Logging framework
+
+11. Cobertura
+    - Code coverage reports
+
+12. Cucumber JVM Deps
+    - Legacy internal Cucumber dependency (obsolete)
+
+13. tools.jar (JDK 8)
+    - Java internal tools library (obsolete in Java 9+)
