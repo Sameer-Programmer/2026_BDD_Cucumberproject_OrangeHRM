@@ -5,10 +5,10 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = ".//Features",
         glue = "stepDefiniations",
-        dryRun = false,
+        dryRun = true,
         monochrome = true,
-        plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber.json"},
-        tags = "@sanity"
+        plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber.json"}
+        //,tags = "@sanity"
 )
 public class TestCaserun extends AbstractTestNGCucumberTests {
 }
