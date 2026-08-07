@@ -126,8 +126,8 @@ public class Steps1 extends Baseclass {
                 "Candidates page header is incorrect");
     }
 
-    @Then("Click on Senior QA lead from Vacency dropdown")
-    public void click_on_senior_qa_lead_from_vacency_dropdown() {
+    @And("Click on Senior QA lead from Vacancy dropdown")
+    public void click_on_senior_qa_lead_from_vacancy_dropdown() {
 
         candidatePage.clickVacancyDropdown();
         candidatePage.selectSeniorQALead();

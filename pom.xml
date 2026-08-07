@@ -130,9 +130,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.3</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    <includes>
+                        <include>**/TestCaserun.java</include>
+                    </includes>
                 </configuration>
             </plugin>
 

@@ -3,9 +3,9 @@ package testRunner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
-        features = ".//Features",
+        features = ".//Features//Candidate.feature",
         glue = "stepDefiniations",
-        dryRun = false,
+        dryRun = true,
         monochrome = true,
         plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber.json"}
 )

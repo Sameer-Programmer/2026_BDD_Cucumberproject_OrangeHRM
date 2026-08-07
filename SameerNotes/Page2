@@ -22,4 +22,21 @@ Step3
  Step5 -To Run the test cases
  src/test/java/testRunner/TestCaserun.java
 
- //p[contains(normalize-space(),'Successfully Saved')]
+ Step 6
+ Add Helpers for wait and table
+
+ Step 7
+ ------------
+ From Test Runner we can run , dry and UI Mode but if we want to run thriugh maven we have place file name under configuration of
+maven-surefire-plugin
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.5.4</version>
+
+    <configuration>
+        <includes>
+            <include>**/TestCaserun.java</include>
+        </includes>
+    </configuration>
+</plugin>
