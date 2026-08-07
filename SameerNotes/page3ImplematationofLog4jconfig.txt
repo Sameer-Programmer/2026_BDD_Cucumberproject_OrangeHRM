@@ -1,0 +1,79 @@
+===========================
+Log4j2 Integration (BDD Cucumber Selenium Maven)
+===========================
+
+1. Add Log4j2 Maven Dependencies in pom.xml
+   - log4j-api
+   - log4j-core
+   - log4j-slf4j2-impl (or the required SLF4J bridge)
+
+2. Create Log4j2 Configuration File
+   - File Name: log4j2.xml
+   - Location:
+     src/test/resources/log4j2.xml
+     (or src/main/resources)
+
+3. Configure log4j2.xml
+   - Console Appender
+   - File Appender (Logs/TestExecution.log)
+   - Pattern Layout
+   - Root Logger
+   - Logger Level (INFO/DEBUG)
+
+4. Create Logger in BaseClass
+
+   import org.apache.logging.log4j.LogManager;
+   import org.apache.logging.log4j.Logger;
+
+   public static Logger logger = LogManager.getLogger(Baseclass.class);
+
+5. Initialize Logger
+   (Usually no extra initialization is required.)
+
+6. Add Logging Statements in BaseClass
+
+   logger.info("===== LOGGER TEST =====");
+   logger.info("********** Launching Chrome Browser **********");
+   logger.info("Navigating to URL");
+   logger.info("Closing Browser");
+
+7. Use Logger in Step Definition Classes
+
+   logger.info("Entering Username");
+   logger.info("Entering Password");
+   logger.info("Clicking Login Button");
+   logger.info("Dashboard Verified");
+   logger.error("Login Failed");
+   logger.warn("Expected element not found");
+
+8. Execute Tests
+   - Run from TestNG
+   - Run from Maven
+     mvn clean test
+
+9. Verify Log File
+   Check:
+   project-folder/Logs/TestExecution.log
+
+10. Benefits
+   ✔ Professional execution logs
+   ✔ Easy debugging
+   ✔ Console + File logging
+   ✔ Timestamped logs
+   ✔ Different log levels (INFO, WARN, ERROR, DEBUG)
+   ✔ Suitable for Hybrid/BDD Frameworks
+
+Flow:
+Maven Dependencies
+        ↓
+log4j2.xml Configuration
+        ↓
+Create Logger in BaseClass
+        ↓
+Use logger.info()/warn()/error() in BaseClass
+        ↓
+Use Logger in Step Definition Classes
+        ↓
+Run Maven/TestNG
+        ↓
+Logs Generated in Console + Log File
