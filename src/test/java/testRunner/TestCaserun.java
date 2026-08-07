@@ -3,7 +3,7 @@ package testRunner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
-        features = ".//Features/Candidate.feature",
+        features = ".//Features",
         glue = "stepDefiniations",
         dryRun = false,
         monochrome = true,
