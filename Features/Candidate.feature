@@ -6,6 +6,7 @@ Feature: Candidates
     And User Enters Credentials from Config and Click on Login
     Then HomScreen Should be "Dashboard"
 
+  @sanity
   Scenario: Add a Candidate
     When User Clicks on Recruitment Menu
     And User Clicks on Add Button

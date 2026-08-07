@@ -1,0 +1,23 @@
+| Requirement                                             | CucumberOptions                                    |
+| ------------------------------------------------------- | -------------------------------------------------- |
+| Run only **Sanity** tests                               | `tags = "@sanity"`                                 |
+| Run only **Smoke** tests                                | `tags = "@smoke"`                                  |
+| Run only **Regression** tests                           | `tags = "@regression"`                             |
+| Run scenarios having both **Smoke** and **Sanity**      | `tags = "@smoke and @sanity"`                      |
+| Run scenarios having either **Smoke** or **Sanity**     | `tags = "@smoke or @sanity"`                       |
+| Exclude **Regression** tests                            | `tags = "not @regression"`                         |
+| Exclude **Smoke** tests                                 | `tags = "not @smoke"`                              |
+| Run **Smoke** but not **Regression**                    | `tags = "@smoke and not @regression"`              |
+| Run **Sanity** but not **Regression**                   | `tags = "@sanity and not @regression"`             |
+| Run **Smoke** or **Sanity**, but exclude **Regression** | `tags = "(@smoke or @sanity) and not @regression"` |
+| Run only **Login** module                               | `tags = "@login"`                                  |
+| Run only **Candidate** module                           | `tags = "@candidate"`                              |
+| Run only **Positive Login** scenarios                   | `tags = "@login and @positive"`                    |
+| Run only **Negative Login** scenarios                   | `tags = "@login and @negative"`                    |
+| Run **Candidate** or **Recruitment** module             | `tags = "@candidate or @recruitment"`              |
+
+
+@smoke
+@sanity
+@login
+Scenario: Login with Valid Credentials

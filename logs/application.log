@@ -153,3 +153,22 @@
 2026-08-07 21:40:03 INFO  [main] Baseclass - Login Successful
 2026-08-07 21:40:03 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 2026-08-07 21:40:03 INFO  [main] Baseclass - Page Title : OrangeHRM
+2026-08-07 21:54:03 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:54:03 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:54:06 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:54:06 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:54:10 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:54:10 INFO  [main] Baseclass - Logging in with username from config : Admin
+2026-08-07 21:54:12 INFO  [main] Baseclass - Login Successful
+2026-08-07 21:54:12 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+2026-08-07 21:54:12 INFO  [main] Baseclass - Page Title : OrangeHRM
+2026-08-07 21:54:12 INFO  [main] Baseclass - Clicking on Recruitment Menu
+2026-08-07 21:54:13 INFO  [main] Baseclass - Recruitment Page Opened Successfully
+2026-08-07 21:54:13 INFO  [main] Baseclass - Clicking on Add Button
+2026-08-07 21:54:15 INFO  [main] Baseclass - Add Candidate Page Opened Successfully
+2026-08-07 21:54:15 INFO  [main] Baseclass - Entering Candidate Details
+2026-08-07 21:54:15 INFO  [main] Baseclass - Generated Email : UTAwe@yopmail.com
+2026-08-07 21:54:16 INFO  [main] Baseclass - Candidate Details Entered Successfully
+2026-08-07 21:54:16 INFO  [main] Baseclass - Clicking on Save Button
+2026-08-07 21:54:16 INFO  [main] Baseclass - Candidate Saved Successfully
+2026-08-07 21:54:17 INFO  [main] Baseclass - Browser Closed Successfully
