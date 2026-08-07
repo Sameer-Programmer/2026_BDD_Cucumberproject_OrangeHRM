@@ -1,9 +1,9 @@
 Feature: Login Feature
 
   Scenario: Login with Valid Credentials
-    Given Launch the Chrome Browser
-    When Enter the URL "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    And User Enters Email as "Admin" and password as "admin123" Click on Login
+    Given Launch the Browser
+    When Enter the URL from Config
+    And User Enters Credentials from Config and Click on Login
     Then HomScreen Should be "Dashboard"
     Then Logout
     Then close the Browser
@@ -11,8 +11,8 @@ Feature: Login Feature
 
   Scenario Outline: Login with Multiple Credentials
 
-    Given Launch the Chrome Browser
-    When Enter the URL "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+    Given Launch the Browser
+    When Enter the URL from Config
     And User Enters Email as "<username>" and password as "<password>" Click on Login
     Then HomScreen Should be "Dashboard"
     Then Logout

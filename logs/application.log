@@ -1,0 +1,155 @@
+2026-08-07 17:51:06 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 17:51:06 INFO  [main] Baseclass - ********** Launching Chrome Browser **********
+2026-08-07 17:51:07 INFO  [main] Baseclass - Chrome Browser Launched Successfully
+2026-08-07 17:51:07 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 17:51:29 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 17:52:17 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 17:52:17 INFO  [main] Baseclass - ********** Launching Chrome Browser **********
+2026-08-07 17:52:19 INFO  [main] Baseclass - Chrome Browser Launched Successfully
+2026-08-07 17:52:19 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 17:52:44 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 17:54:14 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 17:54:14 INFO  [main] Baseclass - ********** Launching Chrome Browser **********
+2026-08-07 17:54:17 INFO  [main] Baseclass - Chrome Browser Launched Successfully
+2026-08-07 17:54:17 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 17:54:25 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:10:19 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:10:19 INFO  [main] Baseclass - ********** Launching Chrome Browser (headless=false) **********
+2026-08-07 21:10:24 INFO  [main] Baseclass - chrome Browser Launched Successfully
+2026-08-07 21:10:24 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:10:30 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:10:46 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:10:46 INFO  [main] Baseclass - ********** Launching Chrome Browser (headless=false) **********
+2026-08-07 21:10:47 INFO  [main] Baseclass - chrome Browser Launched Successfully
+2026-08-07 21:10:47 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:10:50 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:10:56 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:10:56 INFO  [main] Baseclass - ********** Launching Chrome Browser (headless=false) **********
+2026-08-07 21:10:57 INFO  [main] Baseclass - chrome Browser Launched Successfully
+2026-08-07 21:10:57 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:11:00 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:11:03 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:11:03 INFO  [main] Baseclass - ********** Launching Chrome Browser (headless=false) **********
+2026-08-07 21:11:04 INFO  [main] Baseclass - chrome Browser Launched Successfully
+2026-08-07 21:11:04 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:11:08 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:11:12 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:11:12 INFO  [main] Baseclass - ********** Launching Chrome Browser (headless=false) **********
+2026-08-07 21:11:13 INFO  [main] Baseclass - chrome Browser Launched Successfully
+2026-08-07 21:11:13 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:11:16 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:11:42 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:11:42 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=true) **********
+2026-08-07 21:11:54 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:11:54 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:11:57 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:12:10 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:12:10 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=true) **********
+2026-08-07 21:12:11 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:12:11 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:12:14 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:12:26 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:12:26 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=true) **********
+2026-08-07 21:12:28 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:12:28 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:13:48 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:13:58 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:13:58 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=true) **********
+2026-08-07 21:14:02 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:14:02 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:14:06 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:14:12 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:14:12 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=true) **********
+2026-08-07 21:14:14 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:14:14 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:14:16 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:18:04 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:18:04 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:18:07 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:18:07 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:18:18 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:18:24 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:18:24 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:18:26 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:18:26 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:18:29 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:18:34 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:18:34 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:18:35 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:18:35 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:18:39 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:18:44 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:18:44 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:18:45 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:18:45 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:18:50 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:19:00 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:19:00 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:19:01 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:19:01 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:19:04 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:38:41 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:38:41 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:38:44 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:38:44 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:38:47 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:38:47 INFO  [main] Baseclass - Logging in with username from config : Admin
+2026-08-07 21:38:51 INFO  [main] Baseclass - Login Successful
+2026-08-07 21:38:51 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+2026-08-07 21:38:51 INFO  [main] Baseclass - Page Title : OrangeHRM
+2026-08-07 21:38:52 INFO  [main] Baseclass - Clicking on Recruitment Menu
+2026-08-07 21:38:55 INFO  [main] Baseclass - Recruitment Page Opened Successfully
+2026-08-07 21:38:55 INFO  [main] Baseclass - Clicking on Add Button
+2026-08-07 21:38:59 INFO  [main] Baseclass - Add Candidate Page Opened Successfully
+2026-08-07 21:38:59 INFO  [main] Baseclass - Entering Candidate Details
+2026-08-07 21:39:02 INFO  [main] Baseclass - Generated Email : dnzHq@yopmail.com
+2026-08-07 21:39:02 INFO  [main] Baseclass - Candidate Details Entered Successfully
+2026-08-07 21:39:02 INFO  [main] Baseclass - Clicking on Save Button
+2026-08-07 21:39:03 INFO  [main] Baseclass - Candidate Saved Successfully
+2026-08-07 21:39:04 INFO  [main] Baseclass - Browser Closed Successfully
+2026-08-07 21:39:04 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:39:04 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:39:06 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:39:06 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:39:09 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:39:09 INFO  [main] Baseclass - Logging in with username from config : Admin
+2026-08-07 21:39:13 INFO  [main] Baseclass - Login Successful
+2026-08-07 21:39:13 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+2026-08-07 21:39:13 INFO  [main] Baseclass - Page Title : OrangeHRM
+2026-08-07 21:39:14 INFO  [main] Baseclass - Clicking on Recruitment Menu
+2026-08-07 21:39:17 INFO  [main] Baseclass - Recruitment Page Opened Successfully
+2026-08-07 21:39:18 INFO  [main] Baseclass - Candidates Page Verified Successfully
+2026-08-07 21:39:18 INFO  [main] Baseclass - Selecting Vacancy : Senior QA Lead
+2026-08-07 21:39:19 INFO  [main] Baseclass - Clicking on Search Button
+2026-08-07 21:39:20 INFO  [main] Baseclass - Search Completed Successfully
+2026-08-07 21:39:20 INFO  [main] Baseclass - Candidate Verified Successfully in Search Results
+2026-08-07 21:39:20 INFO  [main] Baseclass - Browser Closed Successfully
+2026-08-07 21:39:20 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:39:20 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:39:21 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:39:21 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:39:35 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:39:35 INFO  [main] Baseclass - Logging in with username from config : Admin
+2026-08-07 21:39:37 INFO  [main] Baseclass - Login Successful
+2026-08-07 21:39:37 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+2026-08-07 21:39:37 INFO  [main] Baseclass - Page Title : OrangeHRM
+2026-08-07 21:39:39 INFO  [main] Baseclass - Logout Successful
+2026-08-07 21:39:39 INFO  [main] Baseclass - Browser Closed Successfully
+2026-08-07 21:39:39 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:39:39 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:39:40 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:39:40 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:39:55 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:39:56 INFO  [main] Baseclass - Login Successful
+2026-08-07 21:39:56 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+2026-08-07 21:39:56 INFO  [main] Baseclass - Page Title : OrangeHRM
+2026-08-07 21:39:58 INFO  [main] Baseclass - Logout Successful
+2026-08-07 21:39:58 INFO  [main] Baseclass - Browser Closed Successfully
+2026-08-07 21:39:58 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-08-07 21:39:58 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-08-07 21:39:59 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-08-07 21:39:59 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:40:02 INFO  [main] Baseclass - Application Opened Successfully
+2026-08-07 21:40:03 INFO  [main] Baseclass - Login Successful
+2026-08-07 21:40:03 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-08-07 21:40:03 INFO  [main] Baseclass - Page Title : OrangeHRM
