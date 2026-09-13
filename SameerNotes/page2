@@ -27,7 +27,8 @@ Step3
 
  Step 7
  ------------
- From Test Runner we can run , dry and UI Mode but if we want to run thriugh maven we have place file name under configuration of
+ From Test Runner we can run , dry and UI Mode
+ but if we want to run thriugh maven we have place file name under configuration of
 maven-surefire-plugin
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>

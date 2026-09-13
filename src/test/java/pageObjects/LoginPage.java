@@ -27,13 +27,9 @@ public class LoginPage {
     @CacheLookup
     WebElement btnLogin;
 
-
-
-
     public void setUserName(String uname) {
         txtUsername.clear();
         txtUsername.sendKeys(uname);
-
     }
 
     public void setPassword(String pwd) {

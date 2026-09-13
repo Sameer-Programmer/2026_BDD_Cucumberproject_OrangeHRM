@@ -15,28 +15,29 @@ import java.util.Properties;
 
 public class Baseclass {
 
-    public WebDriver driver;
-    public LoginPage loginPage;
-    public HomePage homePage;
-    public CandidatePage candidatePage;
+    // Cucumber creates separate objects for LoginSteps and CandidateSteps.
+    // These fields must therefore be shared so a scenario can use the browser
+    // and page objects created by an earlier step from another step class.
+    public static WebDriver driver;
+    public static LoginPage loginPage;
+    public static HomePage homePage;
+    public static CandidatePage candidatePage;
 
-    public Properties prop;
+    public static Properties prop;
 
     // Logger
     public static final Logger logger = LogManager.getLogger(Baseclass.class);
 
     // Framework Configuration
-    public boolean isHeadless = false;
-    public Duration explicitWait;
+    public static boolean isHeadless = false;
+    public static Duration explicitWait;
 
     public void loadConfig() throws IOException {
 
         prop = new Properties();
-
         try (FileInputStream fis = new FileInputStream(
                 System.getProperty("user.dir")
                         + "/src/test/resources/config.properties")) {
-
             prop.load(fis);
         }
     }
