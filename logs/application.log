@@ -597,3 +597,14 @@
 2026-09-20 20:48:01 INFO  [main] Baseclass - Page Title : OrangeHRM
 2026-09-20 20:48:03 INFO  [main] Baseclass - Logout Successful
 2026-09-20 20:48:03 INFO  [main] Baseclass - Browser Closed Successfully
+2026-09-20 20:52:03 INFO  [main] Baseclass - ===== LOGGER TEST =====
+2026-09-20 20:52:03 INFO  [main] Baseclass - ********** Launching Edge Browser (headless=false) **********
+2026-09-20 20:52:05 INFO  [main] Baseclass - edge Browser Launched Successfully
+2026-09-20 20:52:05 INFO  [main] Baseclass - Opening URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-09-20 20:52:10 INFO  [main] Baseclass - Application Opened Successfully
+2026-09-20 20:52:10 INFO  [main] Baseclass - Logging in with username from config : Admin
+2026-09-20 20:52:12 INFO  [main] Baseclass - Login Successful
+2026-09-20 20:52:12 INFO  [main] Baseclass - Current URL : https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+2026-09-20 20:52:12 INFO  [main] Baseclass - Page Title : OrangeHRM
+2026-09-20 20:52:15 INFO  [main] Baseclass - Logout Successful
+2026-09-20 20:52:16 INFO  [main] Baseclass - Browser Closed Successfully
