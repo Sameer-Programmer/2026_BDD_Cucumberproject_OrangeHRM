@@ -18,7 +18,6 @@
         <selenium.version>4.35.0</selenium.version>
         <testng.version>7.11.0</testng.version>
         <cucumber.version>7.23.0</cucumber.version>
-        <webdrivermanager.version>6.2.0</webdrivermanager.version>
         <log4j.version>2.25.1</log4j.version>
         <poi.version>5.4.1</poi.version>
         <extent.version>5.1.2</extent.version>
@@ -57,12 +56,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- WebDriverManager -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-        </dependency>
+
 
         <!-- Apache POI -->
         <dependency>

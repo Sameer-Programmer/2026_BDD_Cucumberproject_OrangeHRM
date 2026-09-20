@@ -1,5 +1,6 @@
 Feature: Login Feature
 
+  @smoke
   Scenario: Login with Valid Credentials
     Given Launch the Browser
     When Enter the URL from Config
