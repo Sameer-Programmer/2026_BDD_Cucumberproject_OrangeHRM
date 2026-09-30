@@ -13,11 +13,16 @@ public final class PomCodeGenerator {
         out.append("import org.openqa.selenium.WebDriver;\n");
         out.append("import org.openqa.selenium.WebElement;\n");
         out.append("import org.openqa.selenium.support.FindBy;\n");
-        import org.openqa.selenium.support.PageFactory;\nimport org.openqa.selenium.support.ui.ExpectedConditions;\nimport org.openqa.selenium.support.ui.WebDriverWait;\nimport java.time.Duration;\n\n");
+        out.append("import org.openqa.selenium.support.PageFactory;\n");
+        out.append("import org.openqa.selenium.support.ui.ExpectedConditions;\n");
+        out.append("import org.openqa.selenium.support.ui.WebDriverWait;\n");
+        out.append("import java.time.Duration;\n\n");
         out.append("public class ").append(className).append(" {\n\n");
-        out.append("    private final WebDriver driver;\n    private final WebDriverWait wait;\n\n");
+        out.append("    private final WebDriver driver;\n");
+        out.append("    private final WebDriverWait wait;\n\n");
         out.append("    public ").append(className).append("(WebDriver driver) {\n");
         out.append("        this.driver = driver;\n");
+        out.append("        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));\n");
         out.append("        PageFactory.initElements(driver, this);\n");
         out.append("    }\n\n");
 
@@ -28,23 +33,15 @@ public final class PomCodeGenerator {
             BrowserAction a = r.action();
             if (a.locator() == null || a.locator().isBlank()) continue;
 
-            String field = safeIdentifier(
-                    firstNonBlank(a.elementName(), inferFieldName(a), "element")
-            );
-            String method = safeIdentifier(
-                    firstNonBlank(a.methodName(), inferMethodName(a), "performAction")
-            );
+            String field = safeIdentifier(firstNonBlank(a.elementName(), inferFieldName(a), "element"));
+            String method = safeIdentifier(firstNonBlank(a.methodName(), inferMethodName(a), "performAction"));
 
             if (fields.add(field)) {
-                out.append("    @FindBy(")
-                        .append(findByExpression(a))
-                        .append(")\n");
+                out.append("    @FindBy(").append(findByExpression(a)).append(")\n");
                 out.append("    private WebElement ").append(field).append(";\n\n");
             }
 
-            if (methods.add(method)) {
-                appendMethod(out, a, field, method);
-            }
+            if (methods.add(method)) appendMethod(out, a, field, method);
         }
 
         out.append("}\n");
@@ -58,14 +55,18 @@ public final class PomCodeGenerator {
             out.append("        ").append(field).append(".clear();\n");
             out.append("        ").append(field).append(".sendKeys(value);\n");
             out.append("    }\n\n");
+        } else if ("select".equalsIgnoreCase(a.action())) {
+            out.append("    public void ").append(method).append("(String value) {\n");
+            out.append("        wait.until(ExpectedConditions.visibilityOf(").append(field).append("));\n");
+            out.append("        new org.openqa.selenium.support.ui.Select(").append(field).append(").selectByVisibleText(value);\n");
+            out.append("    }\n\n");
         } else if ("verify".equalsIgnoreCase(a.action())) {
             out.append("    public boolean ").append(method).append("() {\n");
-            out.append("        return ").append(field).append(".isDisplayed();\n");
+            out.append("        return wait.until(ExpectedConditions.visibilityOf(").append(field).append(")).isDisplayed();\n");
             out.append("    }\n\n");
         } else {
             out.append("    public void ").append(method).append("() {\n");
-            out.append("        wait.until(ExpectedConditions.elementToBeClickable(").append(field).append("));\n");
-            out.append("        ").append(field).append(".click();\n");
+            out.append("        wait.until(ExpectedConditions.elementToBeClickable(").append(field).append(")).click();\n");
             out.append("    }\n\n");
         }
     }
@@ -86,10 +87,11 @@ public final class PomCodeGenerator {
         String value = a.locator() == null ? "" : a.locator().toLowerCase();
         if (value.contains("username")) return "txtUsername";
         if (value.contains("password")) return "txtPassword";
-        if (value.contains("first name")) return "txtFirstName";
-        if (value.contains("last name")) return "txtLastName";
+        if (value.contains("firstname") || value.contains("first-name")) return "txtFirstName";
+        if (value.contains("lastname") || value.contains("last-name")) return "txtLastName";
         if (value.contains("email")) return "txtEmail";
         if (value.contains("contact")) return "txtContactNumber";
+        if ("click".equalsIgnoreCase(a.action())) return "btnElement";
         return "element";
     }
 
@@ -97,6 +99,7 @@ public final class PomCodeGenerator {
         if ("type".equalsIgnoreCase(a.action())) return "enterValue";
         if ("select".equalsIgnoreCase(a.action())) return "selectValue";
         if ("click".equalsIgnoreCase(a.action())) return "clickElement";
+        if ("verify".equalsIgnoreCase(a.action())) return "verifyElement";
         return "performAction";
     }
 
