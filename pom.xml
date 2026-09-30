@@ -23,9 +23,17 @@
         <poi.version>5.4.1</poi.version>
         <extent.version>5.1.2</extent.version>
         <commonsio.version>2.20.0</commonsio.version>
+        <jackson.version>2.20.0</jackson.version>
     </properties>
 
     <dependencies>
+
+        <!-- Jackson: JSON serialization/deserialization for AI API responses -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 
         <!-- Selenium -->
         <dependency>
