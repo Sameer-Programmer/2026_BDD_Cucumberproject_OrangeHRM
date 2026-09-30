@@ -17,12 +17,19 @@ public final class NaturalLanguagePipeline {
 
         if (Files.exists(generatedRoot)) deleteDirectory(generatedRoot);
         copyDirectory(root.resolve("src"), generatedRoot.resolve("src"));
-        Files.copy(root.resolve("pom.xml"), generatedRoot.resolve("pom.xml"), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(root.resolve("pom.xml"), generatedRoot.resolve("pom.xml"),
+                StandardCopyOption.REPLACE_EXISTING);
 
         Path testng = root.resolve("testng.xml");
         if (Files.exists(testng)) {
-            Files.copy(testng, generatedRoot.resolve("testng.xml"), StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(testng, generatedRoot.resolve("testng.xml"),
+                    StandardCopyOption.REPLACE_EXISTING);
         }
+
+        System.out.println("Scanning existing Page Objects...");
+        List<PageObjectScanner.PageMethod> existingPoms =
+                ExistingPomRegistry.scan(root.resolve("src/test/java/pageObjects"));
+        System.out.println("Discovered existing POM methods: " + existingPoms.size());
 
         var driver = BrowserAgent.startChrome(false);
         PomRecorder recorder;
@@ -33,7 +40,7 @@ public final class NaturalLanguagePipeline {
             driver.quit();
         }
 
-        writeGeneratedArtifacts(generatedRoot, recorder.actions());
+        writeGeneratedArtifacts(generatedRoot, recorder.actions(), existingPoms);
 
         for (int attempt = 0; attempt <= 3; attempt++) {
             MavenExecutionResult result = MavenExecutor.test(generatedRoot, 10);
@@ -63,7 +70,11 @@ public final class NaturalLanguagePipeline {
         }
     }
 
-    private static void writeGeneratedArtifacts(Path root, List<RecordedAction> actions) throws Exception {
+    private static void writeGeneratedArtifacts(
+            Path root,
+            List<RecordedAction> actions,
+            List<PageObjectScanner.PageMethod> existingPoms) throws Exception {
+
         Map<String, List<RecordedAction>> byPage = new LinkedHashMap<>();
 
         for (RecordedAction action : actions) {
@@ -72,16 +83,21 @@ public final class NaturalLanguagePipeline {
         }
 
         for (var entry : byPage.entrySet()) {
-            boolean knownPage = entry.getKey().equals("LoginPage")
-                    || entry.getKey().equals("HomePage")
-                    || entry.getKey().equals("CandidatePage");
+            boolean existingPage = existingPoms.stream()
+                    .anyMatch(p -> p.page().equals(entry.getKey()));
 
-            if (!knownPage) {
-                String code = PomCodeGenerator.generatePageObject(entry.getKey(), entry.getValue());
+            if (!existingPage) {
+                String code = PomCodeGenerator.generatePageObject(
+                        entry.getKey(), entry.getValue());
+
                 Path target = root.resolve("src/test/java/pageObjects")
                         .resolve(entry.getKey() + ".java");
+
                 Files.createDirectories(target.getParent());
                 Files.writeString(target, code);
+                System.out.println("Generated new POM: " + target);
+            } else {
+                System.out.println("Reusing existing POM: " + entry.getKey());
             }
         }
 
