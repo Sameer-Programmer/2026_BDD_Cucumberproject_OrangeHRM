@@ -24,3 +24,7 @@ Create automation for logging into OrangeHRM and opening the Candidates page usi
 ## Next phase
 
 Add a strict JSON schema, generated-file validation, Maven compilation, test execution, and AI-assisted failure analysis.
+
+### Self-healing / failure analysis
+
+The failure-analysis layer accepts a Maven/TestNG log and asks the AI to identify the likely root cause and propose a Java patch. It is intentionally review-first: the patch is printed and is not automatically applied.
