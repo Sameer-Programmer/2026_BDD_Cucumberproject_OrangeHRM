@@ -13,9 +13,9 @@ public final class PomCodeGenerator {
         out.append("import org.openqa.selenium.WebDriver;\n");
         out.append("import org.openqa.selenium.WebElement;\n");
         out.append("import org.openqa.selenium.support.FindBy;\n");
-        out.append("import org.openqa.selenium.support.PageFactory;\n\n");
+        import org.openqa.selenium.support.PageFactory;\nimport org.openqa.selenium.support.ui.ExpectedConditions;\nimport org.openqa.selenium.support.ui.WebDriverWait;\nimport java.time.Duration;\n\n");
         out.append("public class ").append(className).append(" {\n\n");
-        out.append("    private final WebDriver driver;\n\n");
+        out.append("    private final WebDriver driver;\n    private final WebDriverWait wait;\n\n");
         out.append("    public ").append(className).append("(WebDriver driver) {\n");
         out.append("        this.driver = driver;\n");
         out.append("        PageFactory.initElements(driver, this);\n");
@@ -54,6 +54,7 @@ public final class PomCodeGenerator {
     private static void appendMethod(StringBuilder out, BrowserAction a, String field, String method) {
         if ("type".equalsIgnoreCase(a.action())) {
             out.append("    public void ").append(method).append("(String value) {\n");
+            out.append("        wait.until(ExpectedConditions.visibilityOf(").append(field).append("));\n");
             out.append("        ").append(field).append(".clear();\n");
             out.append("        ").append(field).append(".sendKeys(value);\n");
             out.append("    }\n\n");
@@ -63,6 +64,7 @@ public final class PomCodeGenerator {
             out.append("    }\n\n");
         } else {
             out.append("    public void ").append(method).append("() {\n");
+            out.append("        wait.until(ExpectedConditions.elementToBeClickable(").append(field).append("));\n");
             out.append("        ").append(field).append(".click();\n");
             out.append("    }\n\n");
         }
