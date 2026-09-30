@@ -1,3 +1,5 @@
 package ai;
 
-public record FailureAnalysis(String summary, String rootCause, String suggestedFix, String patch) { }
+import java.util.List;
+
+public record FailureAnalysis(String summary, String rootCause, String suggestedFix, List<RepairFile> repairs) { }
