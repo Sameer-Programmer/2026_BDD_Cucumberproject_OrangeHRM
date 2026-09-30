@@ -7,7 +7,7 @@ public class ActionPlanner {
     private final AIClient client = new AIClient();
 
     public ActionPlan plan(String requirement, BrowserContext context) throws Exception {
-        String prompt = MultimodalPromptBuilder.build(context, requirement)
+        String prompt = MultimodalPromptBuilder.build(context, requirement)\n                + ExistingPomPrompt.build(loadExistingPoms())
                 + "\nReturn ONLY JSON: {\"actions\":[{"
                 + "\"action\":\"click|type|select|verify|navigate\","
                 + "\"strategy\":\"id|name|css|xpath|linkText\","
