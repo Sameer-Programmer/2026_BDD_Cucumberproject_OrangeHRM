@@ -15,7 +15,7 @@ public class LiveAutomationAgent {
         try {
             driver.get(url);
             BrowserContext context = BrowserContextCollector.capture(driver);
-            String browserEvidence = BrowserContextPrompt.build(context);
+            String browserEvidence = MultimodalPromptBuilder.build(context, requirement);
             String projectContext = ProjectContext.summarize(Path.of(".").toAbsolutePath().normalize());
             GeneratedProject project = new GenerationService().generate(requirement, projectContext + "\n\nLIVE BROWSER EVIDENCE:\n" + browserEvidence);
             for (GeneratedFile file : project.files()) {
