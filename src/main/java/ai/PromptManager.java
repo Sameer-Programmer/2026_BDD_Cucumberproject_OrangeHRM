@@ -21,7 +21,7 @@ public class PromptManager {
                 User automation requirement:
                 %s
 
-                Return a concise implementation plan first, followed by the Java files that need to be created or changed.
+                Return ONLY valid JSON. The root object must contain a "files" array. Each item must contain exactly "path" and "content". Use repository-relative Java paths such as src/test/java/... or src/main/java/.... Do not wrap the JSON in Markdown fences. Never include secrets. Do not modify pom.xml unless explicitly requested.
                 """.formatted(userRequirement);
     }
 }
