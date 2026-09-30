@@ -3,7 +3,7 @@ package ai;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import java.util.List;
+import org.openqa.selenium.support.ui.Select;
 
 public final class ActionExecutor {
     private ActionExecutor() { }
@@ -13,10 +13,19 @@ public final class ActionExecutor {
             switch (action.action().toLowerCase()) {
                 case "navigate" -> driver.get(action.value());
                 case "click" -> find(driver, action).click();
-                case "type" -> { WebElement e = find(driver, action); e.clear(); e.sendKeys(action.value()); }
+                case "type" -> {
+                    WebElement e = find(driver, action);
+                    e.clear();
+                    e.sendKeys(action.value());
+                }
+                case "select" -> {
+                    WebElement e = find(driver, action);
+                    new Select(e).selectByVisibleText(action.value());
+                }
                 case "verify" -> {
-                    if (!driver.getPageSource().contains(action.value()))
+                    if (!driver.getPageSource().contains(action.value())) {
                         throw new AssertionError("Expected text not found: " + action.value());
+                    }
                 }
                 default -> throw new IllegalArgumentException("Unsupported AI action: " + action.action());
             }
