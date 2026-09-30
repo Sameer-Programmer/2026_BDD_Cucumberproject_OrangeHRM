@@ -9,6 +9,8 @@ public class IterativeAgent {
 
     public PomRecorder run(WebDriver driver, String requirement, int maxSteps) throws Exception {
         PomRecorder recorder = new PomRecorder();
+        java.nio.file.Path pageObjectsDir = java.nio.file.Path.of("src/test/java/pageObjects");
+        java.util.List<PageObjectScanner.PageMethod> existingPoms = ExistingPomRegistry.scan(pageObjectsDir);
 
         for (int step = 1; step <= maxSteps; step++) {
             BrowserContext context = BrowserContextCollector.capture(driver);
@@ -36,10 +38,10 @@ public class IterativeAgent {
 
             BrowserAction executedAction = ResilientActionExecutor.executeWithRecovery(driver, requirement, decision.action(), 2);
 
-            BrowserAction action = ExistingPomRegistry.resolve(executedAction);
+            BrowserAction action = ExistingPomRegistry.resolve(executedAction, existingPoms);
             if (!"navigate".equalsIgnoreCase(action.action())
                     && !"verify".equalsIgnoreCase(action.action())) {
-                String page = ExistingPomRegistry.pageFor(action);
+                String page = ExistingPomRegistry.pageFor(action, existingPoms);
                 if (page == null || page.isBlank()) {
                     page = inferPageObject(context);
                 }
