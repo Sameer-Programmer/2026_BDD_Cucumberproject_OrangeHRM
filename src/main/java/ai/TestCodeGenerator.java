@@ -12,8 +12,8 @@ public final class TestCodeGenerator {
         out.append("package testcases;\n\n");
         out.append("import org.testng.annotations.Test;\n");
         out.append("import pageObjects.*;\n");
-        out.append("import stepDefiniations.Baseclass;\n\n");
-        out.append("public class ").append(testClassName).append(" extends Baseclass {\n\n");
+        out.append("import ai.GeneratedBaseTest;\n\n");
+        out.append("public class ").append(testClassName).append(" extends GeneratedBaseTest {\n\n");
 
         Map<String, String> pageVariables = new LinkedHashMap<>();
         for (RecordedAction r : recorded) {
@@ -24,45 +24,33 @@ public final class TestCodeGenerator {
         }
 
         for (Map.Entry<String, String> e : pageVariables.entrySet()) {
-            out.append("    private ").append(e.getKey()).append(" ")
-                    .append(e.getValue()).append(";\n");
+            out.append("    private ").append(e.getKey()).append(" ").append(e.getValue()).append(";\n");
         }
         if (!pageVariables.isEmpty()) out.append("\n");
 
-        out.append("    @Test\n");
-        out.append("    public void generatedScenario() {\n");
-
+        out.append("    @Test\n    public void generatedScenario() {\n");
         for (Map.Entry<String, String> e : pageVariables.entrySet()) {
-            out.append("        ").append(e.getValue()).append(" = new ")
-                    .append(e.getKey()).append("(driver);\n");
+            out.append("        ").append(e.getValue()).append(" = new ").append(e.getKey()).append("(driver);\n");
         }
         if (!pageVariables.isEmpty()) out.append("\n");
 
         for (RecordedAction r : recorded) {
             BrowserAction a = r.action();
             if ("navigate".equalsIgnoreCase(a.action())) continue;
-
-            String page = r.page();
-            String variable = pageVariables.get(page);
-            if (variable == null) continue;
-
-            String method = a.methodName();
-            if (method == null || method.isBlank()) continue;
+            String variable = pageVariables.get(r.page());
+            if (variable == null || a.methodName() == null || a.methodName().isBlank()) continue;
 
             if ("verify".equalsIgnoreCase(a.action())) {
                 out.append("        org.testng.Assert.assertTrue(")
-                        .append(variable).append(".").append(method).append("());\n");
-            } else if ("type".equalsIgnoreCase(a.action())
-                    || "select".equalsIgnoreCase(a.action())) {
-                out.append("        ").append(variable).append(".").append(method)
-                        .append("("").append(escape(a.value())).append("");\n");
+                        .append(variable).append(".").append(a.methodName()).append("());\n");
+            } else if ("type".equalsIgnoreCase(a.action()) || "select".equalsIgnoreCase(a.action())) {
+                out.append("        ").append(variable).append(".").append(a.methodName())
+                        .append("(\"").append(escape(a.value())).append("\");\n");
             } else {
-                out.append("        ").append(variable).append(".").append(method).append("();\n");
+                out.append("        ").append(variable).append(".").append(a.methodName()).append("();\n");
             }
         }
-
-        out.append("    }\n");
-        out.append("}\n");
+        out.append("    }\n}\n");
         return out.toString();
     }
 
