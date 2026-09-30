@@ -38,7 +38,7 @@ public final class TestCodeGenerator {
 
         for (RecordedAction r : recorded) {
             BrowserAction a = r.action();
-            if ("verify".equalsIgnoreCase(a.action()) || "navigate".equalsIgnoreCase(a.action())) continue;
+            if ("navigate".equalsIgnoreCase(a.action())) continue;
 
             String page = r.page();
             String variable = pageVariables.get(page);
@@ -47,7 +47,7 @@ public final class TestCodeGenerator {
             String method = a.methodName();
             if (method == null || method.isBlank()) continue;
 
-            if ("type".equalsIgnoreCase(a.action())) {
+            if ("verify".equalsIgnoreCase(a.action())) {\n                out.append("        org.testng.Assert.assertTrue(").append(variable).append(".").append(method).append("());\\n");\n            } else if ("type".equalsIgnoreCase(a.action())) {
                 out.append("        ").append(variable).append(".").append(method)
                         .append("(\"").append(escape(a.value())).append("\");\n");
             } else if ("select".equalsIgnoreCase(a.action())) {
