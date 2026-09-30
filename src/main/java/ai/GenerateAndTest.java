@@ -15,5 +15,16 @@ public class GenerateAndTest {
         MavenExecutionResult result = MavenExecutor.test(generatedRoot, 10);
         System.out.println(result.output());
         System.out.println("Maven exit code: " + result.exitCode());
+
+        if (!result.passed()) {
+            FailureAnalysis analysis = new FailureAnalyzer().analyze(requirement, result.output());
+            System.out.println("\n=== AI FAILURE ANALYSIS ===");
+            System.out.println("Summary: " + analysis.summary());
+            System.out.println("Root cause: " + analysis.rootCause());
+            System.out.println("Suggested fix: " + analysis.suggestedFix());
+            System.out.println("Proposed patch:\n" + analysis.patch());
+        } else {
+            System.out.println("\nAI-generated project passed Maven tests.");
+        }
     }
 }
