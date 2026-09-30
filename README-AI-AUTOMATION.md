@@ -28,3 +28,24 @@ Add a strict JSON schema, generated-file validation, Maven compilation, test exe
 ### Self-healing / failure analysis
 
 The failure-analysis layer accepts a Maven/TestNG log and asks the AI to identify the likely root cause and propose a Java patch. It is intentionally review-first: the patch is printed and is not automatically applied.
+
+
+## Natural-Language Browser Execution
+
+Run the AI browser agent with one natural-language requirement:
+
+```bash
+mvn -q -DskipTests compile
+java -cp target/classes:target/dependency/* ai.RunNaturalLanguageTest "https://opensource-demo.orangehrmlive.com/" "Open the application, log in, go to Recruitment, add a candidate, save it, and verify the success message."
+```
+
+The agent:
+1. Opens the supplied URL.
+2. Captures the live DOM and screenshot.
+3. Sends the requirement plus the discovered existing Page Object catalog to the AI.
+4. Executes the planned Selenium action.
+5. Uses bounded AI locator recovery if an action fails.
+6. Records successful actions using existing Page Object methods where available.
+7. Prints the generated TestNG test.
+
+The browser agent is bounded to 15 steps and live locator recovery is bounded to 2 retries per failed action.
