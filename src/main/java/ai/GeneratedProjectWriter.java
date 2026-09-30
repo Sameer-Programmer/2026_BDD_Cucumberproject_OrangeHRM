@@ -10,10 +10,13 @@ public final class GeneratedProjectWriter {
         var errors = GenerationValidator.validate(project);
         if (!errors.isEmpty()) throw new IllegalStateException(String.join("; ", errors));
         for (GeneratedFile file : project.files()) {
+            if (file.path().contains("..") || file.path().startsWith("/") || file.path().startsWith("\\")) {
+                throw new SecurityException("Unsafe generated path: " + file.path());
+            }
             Path target = root.resolve(file.path()).normalize();
             if (!target.startsWith(root.normalize())) throw new SecurityException("Unsafe generated path: " + file.path());
             Files.createDirectories(target.getParent());
-            Files.writeString(target, file.content());
+            Files.writeString(target, file.content(), java.nio.charset.StandardCharsets.UTF_8);
         }
     }
 }
