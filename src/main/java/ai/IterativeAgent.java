@@ -36,10 +36,10 @@ public class IterativeAgent {
 
             BrowserAction executedAction = ResilientActionExecutor.executeWithRecovery(driver, requirement, decision.action(), 2);
 
-            BrowserAction action = executedAction;
+            BrowserAction action = ExistingPomRegistry.resolve(executedAction);
             if (!"navigate".equalsIgnoreCase(action.action())
                     && !"verify".equalsIgnoreCase(action.action())) {
-                String page = action.pageObject();
+                String page = ExistingPomRegistry.pageFor(action);
                 if (page == null || page.isBlank()) {
                     page = inferPageObject(context);
                 }
