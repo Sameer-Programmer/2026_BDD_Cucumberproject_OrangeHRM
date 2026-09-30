@@ -14,7 +14,7 @@ public class IterativeAgent {
 
         for (int step = 1; step <= maxSteps; step++) {
             BrowserContext context = BrowserContextCollector.capture(driver);
-            String prompt = MultimodalPromptBuilder.build(context, requirement)
+            String prompt = MultimodalPromptBuilder.build(context, requirement)\n                    + ExistingPomPrompt.build(existingPoms)
                     + "\nStep " + step + " of " + maxSteps
                     + "\nReturn ONLY JSON with status, action, reason. status is CONTINUE or DONE."
                     + " action fields are action, strategy, locator, value, pageObject, elementName, methodName."
