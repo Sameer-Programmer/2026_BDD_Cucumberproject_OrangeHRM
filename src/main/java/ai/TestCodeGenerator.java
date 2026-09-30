@@ -9,7 +9,7 @@ public final class TestCodeGenerator {
         StringBuilder out = new StringBuilder();
         out.append("package testCases;\n\n");
         out.append("import org.testng.annotations.Test;\n");
-        out.append("import pageObjects.*;\n\n");
+        out.append("import pageObjects.*;\nimport testBase.BaseClass;\n\n");
         out.append("public class ").append(testClassName).append(" extends BaseClass {\n\n");
         out.append("    @Test\n    public void generatedScenario() {\n");
         for (RecordedAction r : recorded) {
