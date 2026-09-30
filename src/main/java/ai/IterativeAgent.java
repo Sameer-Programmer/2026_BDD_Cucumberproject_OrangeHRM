@@ -10,7 +10,7 @@ public class IterativeAgent {
     public PomRecorder run(WebDriver driver, String requirement, int maxSteps) throws Exception {
         PomRecorder recorder = new PomRecorder();
         java.nio.file.Path pageObjectsDir = java.nio.file.Path.of("src/test/java/pageObjects");
-        java.util.List<PageObjectScanner.PageMethod> existingPoms = ExistingPomRegistry.scan(pageObjectsDir);
+        java.util.List<PageObjectScanner.PageMethod> existingPoms = ExistingPomRegistry.scan(pageObjectsDir);\n        System.out.println("Discovered existing POM methods: " + existingPoms.size());
 
         for (int step = 1; step <= maxSteps; step++) {
             BrowserContext context = BrowserContextCollector.capture(driver);
@@ -26,7 +26,7 @@ public class IterativeAgent {
                     AgentDecision.class
             );
 
-            System.out.println("Step " + step + ": " + decision.status() + " - " + decision.reason());
+            System.out.println("Step " + step + ": " + decision.status() + " - " + decision.reason());\n            if (decision.action() != null) {\n                System.out.println("AI action: " + decision.action());\n            }
 
             if ("DONE".equalsIgnoreCase(decision.status())) {
                 return recorder;
