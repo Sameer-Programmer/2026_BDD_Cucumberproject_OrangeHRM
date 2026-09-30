@@ -34,9 +34,9 @@ public class IterativeAgent {
                 throw new IllegalStateException("CONTINUE without an action.");
             }
 
-            ActionExecutor.execute(driver, new ActionPlan(java.util.List.of(decision.action())));
+            BrowserAction executedAction = ResilientActionExecutor.executeWithRecovery(driver, requirement, decision.action(), 2);
 
-            BrowserAction action = decision.action();
+            BrowserAction action = executedAction;
             if (!"navigate".equalsIgnoreCase(action.action())
                     && !"verify".equalsIgnoreCase(action.action())) {
                 String page = action.pageObject();
